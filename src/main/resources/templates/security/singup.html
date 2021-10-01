@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.css" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <title>SING UP</title>
+</head>
+<body>
+<!--Main Navigation-->
+<header>
+    <style>
+        /* Height for devices larger than 576px */
+        @media (min-width: 992px) {
+            #intro {
+                margin-top: -58.59px;
+            }
+        }
+
+        .navbar .nav-link {
+            color: #fff !important;
+        }
+    </style>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+        <div class="container-fluid">
+            <!-- Navbar brand -->
+            <a class="navbar-brand nav-link" target="_blank" href="/">
+                <strong>MDB</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+                    aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarExample01">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" aria-current="page" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" aria-current="page" href="/security/login/form">Login</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" aria-current="page" href="/security/singup/form">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Background image -->
+    <div id="intro" class="bg-image vh-100 shadow-1-strong">
+        <video style="min-width: 100%; min-height: 100%;" playsinline autoplay muted loop>
+            <source class="h-100" src="https://mdbootstrap.com/img/video/Lines.mp4" type="video/mp4"/>
+        </video>
+        <div class="mask" style="
+        background: linear-gradient(
+          45deg,
+          rgba(29, 236, 197, 0.7),
+          rgba(91, 14, 214, 0.7) 100%
+        );
+      ">
+            <div class="container d-flex align-items-center justify-content-center text-center h-100">
+                <div class="text-white">
+                    <h1 class="mb-3">SINGUP ACCOUNT</h1>
+                    <div class="container mt-3">
+                        <form method="post" th:action="@{/security/singup}" th:object="${Account}">
+                            <h3 class="fw-normal mb-3 pb-3" th:text="${message}"></h3>
+                            <!-- 2 column grid layout with text inputs for the first and last names -->
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <input type="text" id="form3Example1" class="form-control"
+                                               th:field="*{username}"/>
+                                        <label class="form-label" for="form3Example1">User name</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-outline">
+                                        <input type="text" id="form3Example2" class="form-control"
+                                               th:field="*{fullname}"/>
+                                        <label class="form-label" for="form3Example2">Full name</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Email input -->
+                            <div class="form-outline mb-4">
+                                <input type="email" id="form3Example3" class="form-control" th:field="*{email}"/>
+                                <label class="form-label" for="form3Example3">Email address</label>
+                            </div>
+
+                            <!-- Password input -->
+                            <div class="form-outline mb-4">
+                                <input type="password" id="form3Example4" class="form-control" th:field="*{password}"/>
+                                <label class="form-label" for="form3Example4">Password</label>
+                            </div>
+
+                            <!-- Checkbox -->
+                            <div class="form-check d-flex justify-content-center mb-4">
+                                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3"
+                                       checked/>
+                                <label class="form-check-label" for="form2Example3">
+                                    Subscribe to our newsletter
+                                </label>
+                            </div>
+
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+
+                            <!-- Register buttons -->
+                            <div class="text-center">
+                                <p>Or sign up with: </p>
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-facebook-f"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-google"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-twitter"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-github"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Background image -->
+</header>
+<!--Main Navigation-->
+<footer class="bg-light text-lg-start mt-3">
+    <div th:replace="~{/layout/fragment/foodter :: footer}"></div>
+</footer>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"></script>
+</body>
+</html>
