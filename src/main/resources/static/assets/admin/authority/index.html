@@ -1,0 +1,23 @@
+
+<div class="container">
+    <div class="d-flex justify-content-center mt-3">
+        <span> AUTHORIZING </span>
+    </div>
+    <hr/>
+    <table class="table table-hover mt-3 text-center">
+        <thead class="">
+        <tr>
+            <th>name</th>
+            <th ng-repeat="role in roles" class="text-center">{{role.name}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="acc in admins">
+            <td>{{acc.fullname}}</td>
+            <th ng-repeat="role in roles" class="text-center">
+                <input type="checkbox" ng-checked="authority_of(acc,role)" ng-click="authority_changed(acc,role)">
+            </th>
+        </tr>
+        </tbody>
+    </table>
+</div>

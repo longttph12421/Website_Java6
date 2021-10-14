@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="d-flex justify-content-center mt-2">CATEGORY LIST</div>
+    <hr>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="cate in cates">
+            <td>{{cate.id}}</td>
+            <td>{{cate.name}}</td>
+            <td>
+                <button ng-click="edit(cate)" class="btn btn-primary btn-floating">
+                    <i class="far fa-edit"></i>
+                </button>
+            </td>
+            <td><button ng-click="delete(cate)" class="btn-close btn-floating"></button></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
